@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div ng-app="myapp" ng-controller="vendingcontroller" style="margin-left:20px">
+
+        <h1 align="center">Vending Machine</h1>    
+        <p align="center">
+        Please insert cash :
+        </p>
+        <div id="btnshow" align="center">
+        <p align="center">
+        <input id="b1" type="button" value="Rs.20" ng-model="p" ng-click="insertcoin(20)"></input>
+        <input id="b2" type="button" value="Rs.50" ng-model="pr" ng-click="insertcoin(50)"></input>
+        <input id="b3" type="button" value="Rs.100" ng-model="pri" ng-click="insertcoin(100)"></input>
+        <input id="b4" type="button" value="Rs.200" ng-model="price" ng-click="insertcoin(200)"></input>
+        <input id="b4" type="hidden"  ng-model="pricee" ng-click="insertcoin(150)"></input>
+        </p></div>
+        <p align="center">
+        <input id="in" type="text" readonly value="{{inicash | currency}}"></input>
+        <input id="cl" type="button" ng-click="cancel()" value="cancel" style="width:100px"></input>
+        </p><br>
+  
+       
+     
+        <br>
+       
+<div id="dvSites"  >
+    <p align="center">Select Products :</p>
+    <div class="mdi"><ul>
+        <li><input type="button" id="a"  ng-model="pro" ng-click="selectslot(0);up();"></input><br>Rs.20<span><br>stock :{{qtym.quantity}}</span></li><!--qty[[3]].quantity-->
+        <li><input type="button" id="b" ng-model="prod" ng-click="selects(1)"></input><br>Rs.50<span><br>stock :{{qty[[4]].quantity}}</span></li> 
+        <li><input type="button" id="c"  ng-model="produ" ng-click="selectsl(2)"></input><br>Rs.100<span><br>stock :{{qty[[1]].quantity}}</span></li>
+        <li><input type="button" id="d" ng-model="product" ng-click="selectslo(3)"></input><br>Rs.200<span><br>stock :{{qty[[2]].quantity}}</span></li>
+        <li><input type="button" id="e" nd-model="products" ng-click="selectslots(4)"></input></li><br>Rs.150<span><br>stock:{{qty[[0]].quantity}}</span></li>
+       
+    </ul></div>
+
+       <script src="controller.js"></script>
+      <!--   <script src="controller2.js"></script>-->
+      
+       <script src="services.js"></script>
+</body>
+</html>
